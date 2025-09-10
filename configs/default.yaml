@@ -1,0 +1,27 @@
+# Few-shot DistilBERT vs TF-IDF + SVM
+seed: 42
+dataset: imdb
+
+# Few-shot sizes: number of training examples per class
+train_sizes: [50, 100, 200, 500]
+
+# Test subset (set to null to use the full test set)
+max_test_examples: 2000
+
+# DistilBERT training
+model_name: distilbert-base-uncased
+max_length: 256
+epochs: 3
+batch_size: 8
+learning_rate: 0.00005
+weight_decay: 0.01
+warmup_ratio: 0.1
+
+# Baseline (TF-IDF + Linear SVM)
+tfidf:
+  max_features: 30000
+  ngram_range: [1, 2]
+  min_df: 2
+
+svm:
+  C: 1.0

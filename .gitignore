@@ -1,0 +1,27 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDE
+.vscode/
+.idea/
+
+# Data caches
+~/.cache/
+.cache/
+hf_cache/
+datasets/
+
+# Results
+results/*
+!results/plots/
+!results/examples.md
+!results/metrics.json
